@@ -1,1 +1,227 @@
-<p>signup works!</p>
+<div class="min-h-screen bg-neutral-50 flex items-center justify-center px-6">
+  <div
+    class="w-full max-w-3xl bg-white border border-neutral-200 rounded-2xl shadow-sm p-10"
+  >
+    <div class="mb-10 text-center">
+      <h1 class="text-3xl font-semibold text-neutral-900">Open Your Account</h1>
+      <p class="text-neutral-500 mt-2 text-sm">
+        Secure digital banking built for modern finance.
+      </p>
+    </div>
+
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="space-y-10">
+      <!-- Personal Information -->
+      <div>
+        <h2
+          class="text-sm font-semibold uppercase tracking-wide text-neutral-500 mb-6"
+        >
+          Personal Information
+        </h2>
+
+        <div class="grid grid-cols-2 gap-6">
+          <div>
+            <label class="block text-xs font-medium text-neutral-500 mb-2">
+              First Name
+            </label>
+            <input
+              type="text"
+              formControlName="firstName"
+              class="w-full bg-neutral-50 border border-neutral-200 rounded-lg px-4 py-2.5 focus:outline-none focus:border-blue-600 focus:bg-white transition"
+            />
+          </div>
+
+          <div>
+            <label class="block text-xs font-medium text-neutral-500 mb-2">
+              Last Name
+            </label>
+            <input
+              type="text"
+              formControlName="lastName"
+              class="w-full bg-neutral-50 border border-neutral-200 rounded-lg px-4 py-2.5 focus:outline-none focus:border-blue-600 focus:bg-white transition"
+            />
+          </div>
+
+          <div>
+            <label class="block text-xs font-medium text-neutral-500 mb-2">
+              Date of Birth
+            </label>
+            <input
+              type="date"
+              formControlName="dateOfBirth"
+              class="w-full bg-neutral-50 border border-neutral-200 rounded-lg px-4 py-2.5 focus:outline-none focus:border-blue-600 focus:bg-white transition"
+            />
+          </div>
+
+          <div>
+            <label class="block text-xs font-medium text-neutral-500 mb-2"
+              >Gender</label
+            >
+            <select
+              formControlName="gender"
+              class="w-full bg-neutral-50 border border-neutral-200 rounded-lg px-4 py-2.5 focus:outline-none focus:border-blue-600 focus:bg-white transition"
+            >
+              <option value="">Select gender</option>
+              <option value="MALE">Male</option>
+              <option value="FEMALE">Female</option>
+              <option value="OTHER">Other</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-xs font-medium text-neutral-500 mb-2">
+              Nationality
+            </label>
+            <input
+              type="text"
+              formControlName="nationality"
+              class="w-full bg-neutral-50 border border-neutral-200 rounded-lg px-4 py-2.5 focus:outline-none focus:border-blue-600 focus:bg-white transition"
+            />
+          </div>
+
+          <div>
+            <label class="block text-xs font-medium text-neutral-500 mb-2">
+              Phone number:
+            </label>
+            <input
+              type="text"
+              formControlName="phoneNumber"
+              placeholder="+352 691 123 456"
+              class="w-full bg-neutral-50 border border-neutral-200 rounded-lg px-4 py-2.5 focus:outline-none focus:border-blue-600 focus:bg-white transition"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Divider -->
+      <div class="border-t border-neutral-200"></div>
+
+      <!-- Address -->
+      <div>
+        <h2
+          class="text-sm font-semibold uppercase tracking-wide text-neutral-500 mb-6"
+        >
+          Address
+        </h2>
+
+        <div formGroupName="address" class="grid grid-cols-2 gap-6">
+          <div class="col-span-2">
+            <label class="block text-xs font-medium text-neutral-500 mb-2">
+              Street
+            </label>
+            <input
+              type="text"
+              formControlName="street"
+              class="w-full bg-neutral-50 border border-neutral-200 rounded-lg px-4 py-2.5 focus:outline-none focus:border-blue-600 focus:bg-white transition"
+            />
+          </div>
+
+          <div>
+            <label class="block text-xs font-medium text-neutral-500 mb-2">
+              Zip Code
+            </label>
+            <input
+              type="text"
+              formControlName="zipCode"
+              class="w-full bg-neutral-50 border border-neutral-200 rounded-lg px-4 py-2.5 focus:outline-none focus:border-blue-600 focus:bg-white transition"
+            />
+          </div>
+
+          <div>
+            <label class="block text-xs font-medium text-neutral-500 mb-2">
+              City
+            </label>
+            <input
+              type="text"
+              formControlName="city"
+              class="w-full bg-neutral-50 border border-neutral-200 rounded-lg px-4 py-2.5 focus:outline-none focus:border-blue-600 focus:bg-white transition"
+            />
+          </div>
+
+          <div class="col-span-2">
+            <label class="block text-xs font-medium text-neutral-500 mb-2">
+              Country
+            </label>
+            <input
+              type="text"
+              formControlName="country"
+              class="w-full bg-neutral-50 border border-neutral-200 rounded-lg px-4 py-2.5 focus:outline-none focus:border-blue-600 focus:bg-white transition"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Divider -->
+      <div class="border-t border-neutral-200"></div>
+
+      <!-- Account Details -->
+      <div>
+        <h2
+          class="text-sm font-semibold uppercase tracking-wide text-neutral-500 mb-6"
+        >
+          Account Details
+        </h2>
+
+        <div class="space-y-6">
+          <div>
+            <label class="block text-xs font-medium text-neutral-500 mb-2">
+              Email Address
+            </label>
+            <input
+              type="email"
+              formControlName="email"
+              class="w-full bg-neutral-50 border border-neutral-200 rounded-lg px-4 py-2.5 focus:outline-none focus:border-blue-600 focus:bg-white transition"
+            />
+          </div>
+
+          <div>
+            <label class="block text-xs font-medium text-neutral-500 mb-2">
+              Password
+            </label>
+            <input
+              type="password"
+              formControlName="password"
+              class="w-full bg-neutral-50 border border-neutral-200 rounded-lg px-4 py-2.5 focus:outline-none focus:border-blue-600 focus:bg-white transition"
+            />
+          </div>
+
+          <div>
+            <label class="block text-xs font-medium text-neutral-500 mb-2">
+              Confirm Password
+            </label>
+            <input
+              type="password"
+              formControlName="confirmPassword"
+              class="w-full bg-neutral-50 border border-neutral-200 rounded-lg px-4 py-2.5 focus:outline-none focus:border-blue-600 focus:bg-white transition"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Submit -->
+      <div class="pt-6">
+        <button
+          type="submit"
+          class="w-full bg-blue-700 hover:bg-blue-800 disabled:bg-neutral-500 cursor-pointer text-white py-3 rounded-lg font-medium transition duration-200 shadow-sm"
+          [disabled]="signupForm.invalid"
+        >
+          Create Account
+        </button>
+
+        @if (errorMessage) {
+          <p
+            class="mb-6 p-3 bg-red-50 border border-red-200 text-red-700 text-sm rounded-lg"
+          >
+            {{ errorMessage }}
+          </p>
+        }
+
+        <p class="text-center text-sm text-neutral-500 mt-6">
+          Already have an account?
+          <a class="text-blue-700 font-medium hover:underline cursor-pointer">
+            Login
+          </a>
+        </p>
+      </div>
+    </form>
+  </div>
+</div>

@@ -8,6 +8,11 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./features/auth/pages/signup/signup').then((m) => m.Signup),
   },
+  {
+    path: 'login',
+    loadComponent: () =>
+      import('./features/auth/pages/login/login').then((m) => m.Login),
+  },
 
   // Layout
   {
