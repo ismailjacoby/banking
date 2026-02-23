@@ -1,0 +1,30 @@
+<div
+  class="h-screen w-64 bg-white border-r border-neutral-300 flex flex-col justify-between"
+>
+  <!-- Top Section -->
+  <div>
+    <!-- Navigation-->
+    <div class="flex items-center justify-center font-bold py-8">BANKS</div>
+
+    <!-- Navigation-->
+    <nav class="px-3 space-y-1 flex flex-col items-center">
+      <a href="" class="hover:bg-neutral-200 rounded-md px-4 py-1">Dashboard</a>
+      <a href="" class="hover:bg-neutral-200 rounded-md px-4 py-1">Accounts</a>
+      <a href="" class="hover:bg-neutral-200 rounded-md px-4 py-1">Payments</a>
+      <a href="" class="hover:bg-neutral-200 rounded-md px-4 py-1"
+        >Transaction</a
+      >
+    </nav>
+  </div>
+
+  <!-- Bottom Section -->
+  <nav class="flex flex-col items-center py-6">
+    <a href="" class="hover:bg-neutral-200 rounded-md px-4 py-1">Profile</a>
+    <a
+      [routerLink]="['signup']"
+      class="hover:bg-neutral-200 rounded-md px-4 py-1"
+      >Signup</a
+    >
+    <button class="hover:bg-neutral-200 rounded-md px-4 py-1">Sign Out</button>
+  </nav>
+</div>
