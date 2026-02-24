@@ -12,7 +12,7 @@ import { SignupRequest } from '../../../../core/models/auth';
 
 @Component({
   selector: 'app-signup',
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, RouterLink],
   templateUrl: './signup.html',
   styleUrl: './signup.css',
 })
