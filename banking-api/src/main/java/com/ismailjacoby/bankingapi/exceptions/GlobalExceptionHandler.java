@@ -56,4 +56,11 @@ public class GlobalExceptionHandler {
 
         return new ErrorResponse("Validation failed", message, HttpStatus.BAD_REQUEST);
     }
+
+    // NotFoundException
+    @ExceptionHandler(NotFoundException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public ErrorResponse handleNotFoundException(NotFoundException e) {
+        return new ErrorResponse("Not Found", e.getMessage(), HttpStatus.NOT_FOUND);
+    }
 }
