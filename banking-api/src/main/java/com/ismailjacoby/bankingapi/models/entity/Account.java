@@ -1,5 +1,6 @@
 package com.ismailjacoby.bankingapi.models.entity;
 
+import com.ismailjacoby.bankingapi.exceptions.InsufficientBalanceException;
 import com.ismailjacoby.bankingapi.models.enums.AccountStatus;
 import com.ismailjacoby.bankingapi.models.enums.AccountType;
 import com.ismailjacoby.bankingapi.models.enums.Currency;
@@ -60,7 +61,7 @@ public class Account extends BaseEntity {
         validatePositive(amount);
 
         if (this.balance.compareTo(amount) < 0) {
-            throw new IllegalArgumentException("Insufficient balance.");
+            throw new InsufficientBalanceException("Insufficient balance.");
         }
 
         this.balance = this.balance.subtract(amount);

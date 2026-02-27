@@ -42,6 +42,17 @@ public class GlobalExceptionHandler {
         return new ErrorResponse("Invalid Argument", e.getMessage(), HttpStatus.BAD_REQUEST);
     }
 
+    // InsufficientBalanceException
+    @ExceptionHandler(InsufficientBalanceException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public ErrorResponse handleInsufficientBalanceException(InsufficientBalanceException e) {
+        return new ErrorResponse(
+                "Insufficient Balance",
+                e.getMessage(),
+                HttpStatus.BAD_REQUEST
+        );
+    }
+
     // MethodArgumentNotValidException (Validations)
     @ExceptionHandler(MethodArgumentNotValidException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
