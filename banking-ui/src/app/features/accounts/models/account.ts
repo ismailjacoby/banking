@@ -1,6 +1,5 @@
-export type AccountType = 'CHECKING' | 'SAVINGS';
-export type Currency = 'EUR' | 'USD';
-
+export type AccountType = 'CHECKING' | 'SAVINGS' | 'BUSINESS';
+export type Currency = 'EUR' | 'USD' | 'GBP';
 export type AccountStatus = 'ACTIVE' | 'BLOCKED' | 'CLOSED';
 
 export interface AccountCreationRequest {
