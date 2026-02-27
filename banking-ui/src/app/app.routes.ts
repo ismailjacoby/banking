@@ -18,6 +18,14 @@ export const routes: Routes = [
   {
     path: '',
     component: Layout,
-    children: [],
+    children: [
+      {
+        path: 'accounts',
+        loadChildren: () =>
+          import('./features/accounts/accounts.routes').then(
+            (m) => m.accountRoutes,
+          ),
+      },
+    ],
   },
 ];

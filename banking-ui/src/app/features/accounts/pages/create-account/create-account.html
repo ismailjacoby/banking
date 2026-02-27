@@ -1,0 +1,81 @@
+<div class="min-h-screen bg-neutral-50 flex items-center justify-center px-6">
+  <div
+    class="w-full max-w-md bg-white border border-neutral-200 rounded-2xl shadow-sm p-10"
+  >
+    <div class="mb-8 text-center">
+      <h1 class="text-2xl font-semibold text-neutral-900">Open New Account</h1>
+      <p class="text-neutral-500 text-sm mt-2">
+        Select account type and currency.
+      </p>
+    </div>
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="space-y-6">
+      <!-- Account Type -->
+      <div>
+        <label class="block text-xs font-medium text-neutral-500 mb-2">
+          Account Type
+        </label>
+
+        <select
+          formControlName="accountType"
+          class="w-full bg-neutral-50 border border-neutral-200 rounded-lg px-4 py-2.5 focus:outline-none focus:border-blue-600 focus:bg-white transition"
+        >
+          <option value="">Select type</option>
+          <option value="CHECKING">Checking</option>
+          <option value="SAVINGS">Savings</option>
+        </select>
+
+        @if (
+          form.get("accountType")?.touched && form.get("accountType")?.invalid
+        ) {
+          <p class="text-xs text-red-600 mt-1">Account type is required.</p>
+        }
+      </div>
+
+      <!-- Currency -->
+      <div>
+        <label class="block text-xs font-medium text-neutral-500 mb-2">
+          Currency
+        </label>
+
+        <select
+          formControlName="currency"
+          class="w-full bg-neutral-50 border border-neutral-200 rounded-lg px-4 py-2.5 focus:outline-none focus:border-blue-600 focus:bg-white transition"
+        >
+          <option value="">Select currency</option>
+          <option value="EUR">EUR</option>
+          <option value="USD">USD</option>
+        </select>
+
+        @if (form.get("currency")?.touched && form.get("currency")?.invalid) {
+          <p class="text-xs text-red-600 mt-1">Currency is required.</p>
+        }
+      </div>
+
+      <!-- Submit -->
+      <button
+        type="submit"
+        [disabled]="form.invalid"
+        class="w-full bg-blue-700 hover:bg-blue-800 disabled:bg-neutral-400 text-white py-3 rounded-lg font-medium transition shadow-sm cursor-pointer"
+      >
+        Create Account
+      </button>
+
+      @if (successMessage) {
+        <p
+          class="mt-4 text-sm text-green-600 bg-green-50 p-3 rounded-lg border border-green-200"
+        >
+          {{ successMessage }}
+        </p>
+      }
+
+      @if (errorMessage) {
+        <p
+          class="mt-4 text-sm text-red-600 bg-red-50 p-3 rounded-lg border border-red-200"
+        >
+          {{ errorMessage }}
+        </p>
+      }
+    </form>
+  </div>
+</div>
